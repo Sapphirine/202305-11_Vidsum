@@ -1,0 +1,5 @@
+UPLOADED_VID_DIR = "tmp/uploads/"
+FRAME_ROOT_DIR = "tmp/frames/"
+H5_DATA_DIR = "tmp/h5_data/"
+MODEL_CKPT = "tmp/model/checkpoints/model_epoch80.pth.tar"
+SUMMARY_PATH = "uploader/static/summary_vids/"

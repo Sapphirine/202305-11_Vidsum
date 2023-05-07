@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html style="height: 80vh; width: 100vw">
+  <head>
+      <script type="text/javascript">
+        var title = 'VidSum';
+      </script>
+      {% load static %}
+  </head>
+  <body style="margin: 0; background-image: linear-gradient(red, white); background-repeat: no-repeat; width: 100%; overflow-x: hidden">
+    <div style="display:flex; flex-direction:column">
+      <a href="./">
+        <h1 style="text-align: center; font-family: avenir; color: black"><span style="color: white"><script type="text/javascript">document.write(title)</script> </span></h1>
+      </a>
+      <div style="display: flex; flex-direction: column; height: 18vh; justify-content: space-between; margin: 0 30%">
+
+        <form method="POST" enctype="multipart/form-data" style="display: flex; flex-direction: column">
+            Upload .mp4 files
+            {% csrf_token %}
+            <input style="width: 100%; cursor: pointer" type="file" name="vid_files" accept=".mp4, .MP4">
+            <input style="width: 100%; cursor: pointer" type="submit" value="Upload">
+        </form>
+
+        {% if vid_path %}
+        <video width="100%" controls>
+          <source src='{% static "summary_vids/test_45.mp4" %}' type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        {% endif %}
+
+      </div>
+    </div>
+  </body>
+</html>
